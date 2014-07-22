@@ -1,0 +1,114 @@
+input[type="range"] {
+    -webkit-appearance: none!important;
+    background-color: #333;
+    height: 4px;
+    vertical-align: 1px;
+    color: #555;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none!important;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #3f56b4;
+    cursor: pointer;
+    -webkit-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.header img {
+    color: #FFF; width: 50px; height: 50px; float: left; margin: 8px 12px 12px 0;
+}
+.header h3 { float:left; }
+
+.header { clear:both; }
+
+#post {
+    max-width:600px; margin:0 auto; padding-bottom: 200px;
+    padding-left: 20px; padding-right: 20px;
+}
+
+.fixed_bar_container {
+    position: fixed; bottom: 0; margin-top: 0; z-index: 10;
+    overflow: hidden; display: inline-block; right: 0; width:100%;
+}
+
+.fixed_bar {
+    border-top: solid 2px #3182bd; background-color: #deebf7; padding-top: 0;
+    position: fixed; margin: 0 0 0 25px; height: 200px;
+    text-align: center; position: relative;
+    bottom:0; margin:0; width:100%; 
+}
+
+.focus circle {
+  fill: #E04946;
+}
+
+#rushHourArrivals .area, 
+#rushHourDepartures .area {
+    fill:#E04946;
+}
+
+
+.input_button {
+    font-weight: 700; border-radius: 7px; padding:1.5px; margin:2px;
+    padding: 4px; color: #222; background-color: #3182bd;
+    -webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75); white-space: nowrap;
+}
+
+.input_button:hover {
+    color: #fff; cursor: pointer; text-decoration: none;
+}
+#total_output { width: 40%; padding: 10px; display: inline-block; top: 15px; left: 10px; position: absolute;}
+#equals { width: 10%; display: inline-block; font-size: 100px; opacity: 0.8; }
+#lanes { width: 40%; padding: 10px; display: inline-block; top: 15px; right: 10px; position: absolute; }
+
+#theOutput {
+    border-radius: 10px; padding-left:5px; width:auto;
+    text-align: center; display:block;
+}   
+
+.total_output {
+    font-size: 70px; display:inline-block;
+    position: absolute; top: 15px;
+}
+
+.outputInner {
+    font-size: 50px;
+}
+
+.outputOuter {
+    display: inline-block; text-align: center; line-height: 1em; font-size: 20px;
+    margin-left: 10px;
+}
+#total_output .outputOuter {
+    
+}
+
+.whole_input {
+    width:75%; margin: 0 auto; padding: 10px; text-align: center;
+}
+
+.item {
+    display:block; clear: both;
+    border-bottom: 1px solid #ccc; padding: 10px 0; margin: 10px 0;
+}
+.item.lastItem { border-bottom: none; }
+
+.item .text_body { display: block; clear:both; line-height: 25px; }
+
+.slider_value {
+    font-size: 24px; margin-top: 20px; margin-bottom: 10px; font-weight: 500;
+}
+
+@media (max-width: 575px) {
+    .fixed_bar_container { font-size: 2em; height: 150px; }
+    .outputInner { font-size: 34px; }
+    .outputOuter { font-size: 16px; }
+    #total_output { top: 0; } #lanes { top: 0; }
+    #equals { font-size: 50px; }
+}

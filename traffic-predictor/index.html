@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redistribute the LIRR</title>
+<script src = "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- link -->
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700,300,200' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div id='post'>
+
+<h1>The Strike Traffic Predictor:</h1>
+<h2>How to move 92,000 people without the LIRR</h2>
+
+<p>The Long Island Rail Road pumps 92,000 human bodies into the city during the rail’s peak morning hours on weekdays, many of whom presumably will still need to get where they’re going.</p> 
+
+<p>But how they choose to get there &mdash; and if they stay home &mdash; could make a drastic difference if the strike happens.</p>
+
+<p>Exactly how big a difference? That's up to you. Play with the sliders or click the <a class='input_button' id='buttonButton'>buttons</a> to see how different decisions commuters might make would impact the roads next week.</p>
+
+<div class='item'>
+	<div class='header'><img src='img/icon_72.png'/> <h3>Carpooling</h3></div>
+	
+	<div class='text_body'>
+		<p>Strike contingency plans will require vehicles in the HOV lane on the Long Island Expressway to have at least three people. In recent (unscientific) Newsday.com reader polls, <a class='input_button' onclick="javascript:carpool.property('value', '7'),d3.select('#carpool').each(carpool_changed)">7%</a> of respondents planned to carpool. But even if all carpoolers <a class='input_button' onclick="javascript:capacity.property('value', '5'),d3.select('#capacity').each(capacity_changed), carpool.property('value', '7'), d3.select('#carpool').each(carpool_changed)">filled</a> their cars to the brim, it would hardly make a dent.</p>
+	</div>
+
+	<div class='input_wrapper'>
+		<div class='whole_input'>
+		<h4>What percentage of people carpool?</h4>
+			<input id='carpool' type="range" min="0" max="100" value="0" >
+			<div id='carpool_value' class="slider_value"></div>
+		</div>
+
+		<div class='whole_input'>
+			<h4>How many people are in each carpooling vehicle?</h4>
+			
+			<input id='capacity' type="range" min="2" max="7" value="1" >
+			<div id='capacity_value' class="slider_value"></div>
+		</div>
+	</div>
+</div>
+
+<div class='item'>
+	<div class='header'>
+		<img src='img/icon_97.png'/>
+		<h3>Public Transportation</h3>
+	</div>
+	<div class='text_body'>
+		<p>Even <a class='input_button' onclick="javascript:buses.property('value', '2000'),d3.select('#buses').each(bus_changed),capacity.property('value','1'),d3.select('#capacity').each(capacity_changed)">2,000 buses</a> wouldn't replace what the LIRR carries each day, and the MTA's most recent proposal calls for only <a class='input_button' onclick="javascript:buses.property('value', '350'),d3.select('#buses').each(bus_changed)"><strong>350.</strong></a> The MTA says that would serve 15,000 passengers.
+		</p>
+	</div>
+	<div class='input_wrapper'>
+		<div class='whole_input'>
+			<h4>How many buses are deployed?</h4>
+			<input id='buses' type="range" min="0" max="2000" value="0" step="25">
+			<div id='bus_value' class="slider_value"></div>
+			<div>(assuming 42 passengers per bus)</div>
+		</div>
+	</div>
+</div>
+
+<div class='item lastItem'>
+	<div class='header'>
+		<img src='img/icon_10020.png'/>
+		<h3>Commute? What commute?</h3>
+	</div>
+
+	<div class='text_body'>
+		<p>Of course, there's always the option of just not going to work. 
+		<a class='input_button' onclick="javascript:commuters.property('value', '42'),d3.select('#commuters').each(commuters_changed)">42%</a> of Newsday.com readers <a href='http://www.newsday.com/long-island/transportation/what-are-your-plans-in-the-event-of-a-lirr-strike-1.8748587'>said they would</a> telecommute or take the day off in an LIRR strike.</p>
+	</div>
+
+	<div class='input_wrapper'>
+		<div class='whole_input'>
+			<input id='commuters' type="range" min="0" max="100" value="0">
+			<div id='commuter_value' class="slider_value"></div>
+		</div>
+	</div>
+</div>
+
+<div class='fixed_bar_container'><div class='fixed_bar'>
+	<div id='total_output'>
+		<div id='theOutput'>
+			<div class='outputInner'></div>
+			<div class='outputOuter'>
+				extra vehicles
+			</div>
+			<!-- <p style='text-align:center; font-size:20px;'>on the road as a<br> result of the strike</p> -->
+		</div>
+	</div>
+	
+	<div id='equals'>=</div>
+	
+	<div id='lanes'>
+	
+		<div class='outputInner'></div>
+		
+		<div class='outputOuter'>
+			<p>
+				of the Long Island Expressway<br>
+				<small>(rush-hour traffic at the Nassau-Queens border)</small>
+			</p>
+			
+		</div>
+	</div>
+</div></div> <!-- /fixed_bar_container /fixed_bar -->
+
+<div id='lorem'> COMMENTS WILL GO HERE:
+Lorem ipsum dolor sit amet, vim ferri platonem similique ex. Ad nihil adolescens duo, quaerendum suscipiantur ut cum. Eu vel vivendo mnesarchum, vix stet congue diceret te. Vel dolor epicuri consequuntur ea, at sea noster aliquip ocurreret. Vel labitur deseruisse ea, postea offendit recteque per at. Te tale solet pro. Quo ei errem voluptua, prima quaerendum vel at, et vide sententiae his.
+
+Ea vel omnium legimus vivendo, ius an omnis dolore quidam, no habemus accusam eos. Eu populo euripidis has, graece mucius persecuti pri eu, meis corpora electram pri ea. In modo mazim pertinax pro. Ad vim posse facete, esse phaedrum ut eos, vim te legere propriae principes.
+
+Vero intellegam an pro. Id has laudem omnesque antiopam, veri atomorum at has. Porro aperiri pericula ut his, no graeco iisque vituperata his. Dissentias sadipscing definitiones est cu, vero dicam decore ne duo. Vidit lobortis torquatos per at.
+
+Fugit tamquam voluptua et duo, te erat qualisque nam. Labore nemore vis cu, mazim causae qualisque eum cu. Mea eros eligendi disputationi te, inani habemus ad sea, nisl rebum conclusionemque ut eum. Vis te meliore gubergren constituto. In vim iudico gubergren interesset, meis corpora epicuri eos id.
+
+Et eum doctus abhorreant. Duo an pericula incorrupte. Usu et consul graece necessitatibus, ad mea mucius offendit, nemore blandit vis cu. Ne atqui deleniti vis.</div>
+
+<!-- script -->
+<script src="d3.v3.min.js"></script>
+<script src="underscore.js"></script>
+<script src="underscore.inflection.js"></script>
+<script src='waypoints.min.js'></script>
+<script src="predictor.js"></script>
+
+
+</body>
+</html>
